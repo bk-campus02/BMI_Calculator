@@ -37,4 +37,10 @@ public class BMICalculatorTest {
         assertEquals(1, female.calculateBMICategory());
     }
 
+    @Test
+    public void testGetBMICategoryName() {
+        BMICalculator bmiCalculator = new BMICalculator("John", "Doe", 180, 120, 'm');
+        assertEquals("Sehr starkes Übergewicht", bmiCalculator.getBMICategoryName());
+    }
+
 }
