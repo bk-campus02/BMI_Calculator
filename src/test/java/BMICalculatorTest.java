@@ -10,12 +10,22 @@ public class BMICalculatorTest {
 
     @Test
     public void testConstructor() {
-        BMICalculator bmiCalculator = new BMICalculator("John", "Doe", 180, 75.0, 'm');
+        BMICalculator bmiCalculator = new BMICalculator("John", "Doe", 180, 75, 'm');
         assertEquals("John", bmiCalculator.getFirstname());
         assertEquals("Doe", bmiCalculator.getLastname());
         assertEquals(180, bmiCalculator.getBodyHeight());
-        assertEquals(75.0, bmiCalculator.getBodyWeight(), 0.01);
+        assertEquals(75, bmiCalculator.getBodyWeight());
         assertEquals('m', bmiCalculator.getGender());
+    }
+
+    @Test
+    public void testCalculateBMI() {
+        BMICalculator bmiCalculator1 = new BMICalculator("John", "Doe", 170, 70, 'm');
+        assertEquals(24.22, bmiCalculator1.calculateBMI());
+
+        BMICalculator bmiCalculator2 = new BMICalculator("John", "Doe", 180, 120, 'm');
+        assertEquals(37.03, bmiCalculator2.calculateBMI(), 0.01);
+
     }
 
 }
