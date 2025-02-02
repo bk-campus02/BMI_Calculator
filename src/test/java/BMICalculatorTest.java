@@ -28,4 +28,13 @@ public class BMICalculatorTest {
 
     }
 
+    @Test
+    public void testCalculateBMICategory() {
+        BMICalculator male = new BMICalculator("John", "Doe", 180, 120, 'm');
+        assertEquals(2, male.calculateBMICategory());
+
+        BMICalculator female = new BMICalculator("Jane", "Doe", 170, 70, 'w');
+        assertEquals(1, female.calculateBMICategory());
+    }
+
 }
